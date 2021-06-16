@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: hsl(185, 75%, 39%);
+  --fc-primary: hsl(229, 23%, 23%);
+  --fc-secondary: hsl(227, 10%, 46%);
+  --fc-neutral: hsl(0, 0%, 59%);
+}
+
+body {
+  font-size: 18px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.title,
+.primary {
+  font-weight: 700;
+  color: var(--fc-primary);
+}
+
+p {
+  color: var(--fc-neutral);
+}
+
+.container {
+  min-width: 375px;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  background: hsla(185, 75%, 39%);
+}
+
+.container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -50%;
+  right: -40%;
+  background: url("./images/bg-pattern-bottom.svg");
+  z-index: -3;
+}
+.container::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("./images/bg-pattern-top.svg");
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+
+.split {
+  border-radius: 20px;
+  width: min(88%, 350px);
+  height: 380px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.split > .top,
+.mid {
+  flex-basis: 40%;
+}
+
+.split .bottom {
+  flex-basis: 20%;
+}
+
+.top,
+.mid,
+.bottom {
+  width: 100%;
+}
+
+.top {
+  position: relative;
+  background: url("./images/bg-pattern-card.svg");
+  border-radius: 20px 20px 0 0;
+}
+
+h2 {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--fc-secondary);
+}
+
+.hero-img {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-top: 3.75rem;
+}
+
+.mid h2 {
+  margin-top: 80px;
+  margin-left: 0.75rem;
+}
+
+.mid p {
+  font-size: 1.2rem;
+  color: var(--fc-secondary);
+}
+
+.bottom {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--fc-neutral);
+}
+.bottom div h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  letter-spacing: 1.3px;
+  color: var(--fc-secondary);
+}
